@@ -63,7 +63,7 @@ bluetoothSerial.disconnect(app.ondisconnect);
 sendData: function(event) {
 event.preventDefault();
 var text = message.value + "\n";
-var success = function () {`
+var success = function () {
 message.value = "";
 messages.value += ("Us: " + text);
 messages.scrollTop = messages.scrollHeight;
