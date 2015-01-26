@@ -72,12 +72,12 @@ bluetoothSerial.write(text, success);
 return false;
 },
 sendCommand: function(command){
-	switch (command){
+	/*switch (command){
 		case 'led_on': command = 'l1';
 		case 'led_off': command = 'l0';
-	}
+	}*/
 	bluetoothSerial.write(command, function(){
-		
+
 	});
 }
 ondevicelist: function(devices) {
