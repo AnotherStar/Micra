@@ -35,6 +35,8 @@ connectButton.ontouchstart = app.connect;
 led_on.ontouchstart = bluetoothSerial.write('led_on');
 led_off.ontouchstart = bluetoothSerial.write('led_off');
 listButton.ontouchstart = app.list;
+alert(typeof led_on);
+alert(typeof bluetoothSerial.write);
 sendButton.ontouchstart = app.sendData;
 chatform.onsubmit = app.sendData;
 disconnectButton.ontouchstart = app.disconnect;
