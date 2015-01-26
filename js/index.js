@@ -38,8 +38,8 @@ messages.scrollTop = messages.scrollHeight;
 };
 
 connectButton.ontouchstart = app.connect;
-led_on.ontouchstart = bluetoothSerial.write('led_on', success);
-led_off.ontouchstart = bluetoothSerial.write('led_off', success);
+//led_on.ontouchstart = bluetoothSerial.write('led_on', success);
+//led_off.ontouchstart = bluetoothSerial.write('led_off', success);
 listButton.ontouchstart = app.list;
 sendButton.ontouchstart = app.sendData;
 chatform.onsubmit = app.sendData;

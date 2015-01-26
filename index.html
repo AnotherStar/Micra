@@ -64,8 +64,8 @@ limitations under the License.
 			</div>
 		</div>
 	</div>
-	<a class="command" id="led_on">led_on</a>
-	<a class="command" id="led_off">led_off</a>
+	<a onclick="bluetoothSerial.write('led_on');" class="command" id="led_on">led_on</a>
+	<a onclick="bluetoothSerial.write('led_off');" class="command" id="led_off">led_off</a>
 	<footer>
 		<div id="statusMessage"></div>
 	</footer>
