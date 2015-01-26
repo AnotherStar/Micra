@@ -38,7 +38,8 @@ messages.scrollTop = messages.scrollHeight;
 };
 
 connectButton.ontouchstart = app.connect;
-//led_on.ontouchstart = bluetoothSerial.write('led_on', success);
+led_on.ontouchstart = app.sendData('led_on');
+led_off.ontouchstart = app.sendData('led_off');
 //led_off.ontouchstart = bluetoothSerial.write('led_off', success);
 listButton.ontouchstart = app.list;
 sendButton.ontouchstart = app.sendData;
@@ -68,15 +69,14 @@ event.preventDefault();
 app.setStatus("Disconnecting...");
 bluetoothSerial.disconnect(app.ondisconnect);
 },
-sendData: function(event) {
-event.preventDefault();
+sendData: function(e) {
 var text = message.value + "\n";
 var success = function () {
 message.value = "";
 messages.value += ("Us: " + text);
 messages.scrollTop = messages.scrollHeight;
 };
-bluetoothSerial.write(text, success);
+bluetoothSerial.write(e, success);
 return false;
 },
 ondevicelist: function(devices) {
