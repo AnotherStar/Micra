@@ -4,6 +4,7 @@ Created 7 May 2013
 Modified 9 May 2013
 by Tom Igoe
 */
+alert('1');
 var bluetoothSerial = cordova.require('bluetoothSerial');
 var app = {
 
@@ -30,7 +31,11 @@ onDeviceReady: function() {
 	// check to see if Bluetooth is turned on.
 	// this function is called only
 	//if isEnabled(), below, returns success:
+alert('2');
+
 	var listPorts = function() {
+alert('3');
+
 		// list the available BT ports:
 		bluetoothSerial.list(
 			function(results) {
@@ -43,6 +48,8 @@ onDeviceReady: function() {
 	}
 	// if isEnabled returns failure, this function is called:
 	var notEnabled = function() {
+alert('4');
+
 		app.display("Bluetooth is not enabled.")
 		}
 	// check if Bluetooth is on:
