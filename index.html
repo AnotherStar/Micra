@@ -82,7 +82,7 @@ limitations under the License.
 <script>
 $(document).ready(function() {
 	$('.command').on('click', function(){
-		command = $(this).attr('command');
+		var command = $(this).attr('command');
 		app.sendCommand(command);
 	})
 });

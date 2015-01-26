@@ -76,7 +76,7 @@ sendCommand: function(command){
 		case 'led_on': command = 'l1';
 		case 'led_off': command = 'l0';
 	}
-	bluetoothSerial.write(text, function(){
+	bluetoothSerial.write(command, function(){
 		
 	});
 }
