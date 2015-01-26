@@ -31,12 +31,16 @@ deviceready: function() {
 // note that this is an event handler so the scope is that of the event
 // so we need to call app.foo(), and not this.foo()
 // wire buttons to functions
+var success = function () {
+message.value = "";
+messages.value += ("Us: " + text);
+messages.scrollTop = messages.scrollHeight;
+};
+
 connectButton.ontouchstart = app.connect;
-led_on.ontouchstart = bluetoothSerial.write('led_on');
-led_off.ontouchstart = bluetoothSerial.write('led_off');
+led_on.ontouchstart = bluetoothSerial.write('led_on', success);
+led_off.ontouchstart = bluetoothSerial.write('led_off', success);
 listButton.ontouchstart = app.list;
-alert(typeof led_on);
-alert(typeof bluetoothSerial.write);
 sendButton.ontouchstart = app.sendData;
 chatform.onsubmit = app.sendData;
 disconnectButton.ontouchstart = app.disconnect;
