@@ -64,8 +64,8 @@ limitations under the License.
 			</div>
 		</div>
 	</div>
-	<a class="command" command="led_on">led_on</a>
-	<a class="command" command="led_off">led_off</a>
+	<a class="command" id="led_on">led_on</a>
+	<a class="command" id="led_off">led_off</a>
 	<footer>
 		<div id="statusMessage"></div>
 	</footer>
@@ -81,9 +81,9 @@ limitations under the License.
 
 <script>
 $(document).ready(function() {
-	$('.command').on('click', function(){
-		var command = $(this).attr('command');
-		app.sendData;
-	})
+	//$('.command').on('click', function(){
+	//	var command = $(this).attr('command');
+	//	app.sendData;
+	//})
 });
 </script>

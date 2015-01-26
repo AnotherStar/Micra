@@ -32,6 +32,8 @@ deviceready: function() {
 // so we need to call app.foo(), and not this.foo()
 // wire buttons to functions
 connectButton.ontouchstart = app.connect;
+led_on.ontouchstart = app.bluetoothSerial.write('led_on');
+led_off.ontouchstart = app.bluetoothSerial.write('led_off');
 listButton.ontouchstart = app.list;
 sendButton.ontouchstart = app.sendData;
 chatform.onsubmit = app.sendData;
