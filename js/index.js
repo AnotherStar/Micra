@@ -71,6 +71,15 @@ messages.scrollTop = messages.scrollHeight;
 bluetoothSerial.write(text, success);
 return false;
 },
+sendCommand: function(command){
+	switch (command){
+		case 'led_on': command = 'l1';
+		case 'led_off': command = 'l0';
+	}
+	bluetoothSerial.write(text, function(){
+		
+	});
+}
 ondevicelist: function(devices) {
 var option;
 // remove existing devices

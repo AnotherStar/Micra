@@ -22,56 +22,68 @@ limitations under the License.
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>Bluetooth Serial Chat</title>
 </head>
-<body>
-<div class="topcoat-navigation-bar">
-<div class="topcoat-navigation-bar__item left quarter">
-<a class="topcoat-icon-button--quiet">
-<span class="topcoat-icon topcoat-icon--menu-stack"></span>
-</a>
-</div>
-<div class="topcoat-navigation-bar__item center half">
-<h1 class="topcoat-navigation-bar__title">Bluetooth Chat</h1>
-</div>
-<div class="topcoat-navigation-bar__item right quarter">
-<a class="topcoat-icon-button--quiet">
-<span class="topcoat-icon topcoat-icon--edit"></span>
-</a>
-</div>
-</div>
-<div id="content">
-<div id="connection">
-<div style="margin: 20px">
-Device: <br/>
-<select id="deviceList">
-<option>Discovering...</option>
-</select>
-</div>
-<p>
-<a class="topcoat-button--large is-disabled" id="connectButton">Connect</a>
-</p>
-<p>
-<a class="topcoat-button--large" id="listButton">List Devices</a>
-</p>
-</div>
-<div id="chat">
-<form id="chatform">
-<textarea id="messages" readonly></textarea>
-<input type="text" class="topcoat-text-input" id="message" placeholder="Message" />
-<a class="topcoat-button--cta" id="sendButton">Send</a>
-</form>
-<div class="center">
-<a class="topcoat-button" id="disconnectButton">Disconnect</a>
-</div>
-</div>
-</div>
-<footer>
-<div id="statusMessage"></div>
-</footer>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/bluetoothSerial.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript">
-app.initialize();
-</script>
-</body>
+	<body>
+	<div class="topcoat-navigation-bar">
+		<div class="topcoat-navigation-bar__item left quarter">
+			<a class="topcoat-icon-button--quiet">
+				<span class="topcoat-icon topcoat-icon--menu-stack"></span>
+			</a>
+		</div>
+		<div class="topcoat-navigation-bar__item center half">
+			<h1 class="topcoat-navigation-bar__title">Bluetooth Chat</h1>
+		</div>
+		<div class="topcoat-navigation-bar__item right quarter">
+			<a class="topcoat-icon-button--quiet">
+				<span class="topcoat-icon topcoat-icon--edit"></span>
+			</a>
+		</div>
+	</div>
+	<div id="content">
+		<div id="connection">
+			<div style="margin: 20px">
+				Device: <br/>
+				<select id="deviceList">
+					<option>Discovering...</option>
+				</select>
+			</div>
+			<p>
+				<a class="topcoat-button--large is-disabled" id="connectButton">Connect</a>
+			</p>
+			<p>
+				<a class="topcoat-button--large" id="listButton">List Devices</a>
+			</p>
+		</div>
+		<div id="chat">
+			<form id="chatform">
+				<textarea id="messages" readonly></textarea>
+					<input type="text" class="topcoat-text-input" id="message" placeholder="Message" />
+				<a class="topcoat-button--cta" id="sendButton">Send</a>
+			</form>
+			<div class="center">
+				<a class="topcoat-button" id="disconnectButton">Disconnect</a>
+			</div>
+		</div>
+	</div>
+	<a class="command" command="led_on">led_on</a>
+	<a class="command" command="led_off">led_off</a>
+	<footer>
+		<div id="statusMessage"></div>
+	</footer>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/bluetoothSerial.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+	app.initialize();
+	</script>
+	</body>
 </html>
+
+<script>
+$(document).ready(function() {
+	$('.command').on('click', function(){
+		command = $(this).attr('command');
+		app.sendCommand(command);
+	})
+});
+</script>
