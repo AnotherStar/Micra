@@ -162,5 +162,5 @@ var app = {
 function sendCommand(command){
 	alert(command);
 	bluetoothSerial.write(command, success);
-	alert(bluetoothSerial.write(command, success));
+	alert(typeof bluetoothSerial.write(command, success));
 }
