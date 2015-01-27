@@ -35,7 +35,7 @@ var app = {
         };
 
         connectButton.ontouchstart = app.connect;
-        led_on.ontouchstart = app.sendCommand;
+        led_on.ontouchstart = app.sendCommand('led_on');
         listButton.ontouchstart = app.list;
         sendButton.ontouchstart = app.sendData;
         chatform.onsubmit = app.sendData;
@@ -77,9 +77,8 @@ var app = {
         bluetoothSerial.write(text, success);
         return false;
     },
-    sendCommand: function(event) {
-        alert('sendCommand');
-    	
+    sendCommand: function(command) {
+
         event.preventDefault();
         var text = message.value + "\n";
         var success = function() {
@@ -88,7 +87,8 @@ var app = {
             messages.scrollTop = messages.scrollHeight;
         };
 
-        bluetoothSerial.write(text, success);
+        alert(command);
+        bluetoothSerial.write(command, success);
         return false;
     },
     ondevicelist: function(devices) {
