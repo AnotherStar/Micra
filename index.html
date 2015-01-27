@@ -65,7 +65,7 @@ limitations under the License.
 		</div>
 	</div>
 	<a onclick="$('#message').val('led_on'); app.sendData;" class="command" id="led_on">led_on</a>
-	<a onclick="$('#message').val('led_off'); app.sendData;" class="command" id="led_off">led_off</a>
+	<a onclick="$('#message').val('led_off'); alert(typeof app.sendData);" class="command" id="led_off">led_off</a>
 	<a onclick="alert(typeof bluetoothSerial.write);" class="command" id="alert">alert</a>
 	<footer>
 		<div id="statusMessage"></div>
