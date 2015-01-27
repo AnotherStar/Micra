@@ -35,7 +35,6 @@ var app = {
         };
 
         connectButton.ontouchstart = app.connect;
-        led_on.ontouchstart = app.sendCommand('led_on');
         listButton.ontouchstart = app.list;
         sendButton.ontouchstart = app.sendData;
         chatform.onsubmit = app.sendData;
@@ -75,20 +74,6 @@ var app = {
 
         alert(text);
         bluetoothSerial.write(text, success);
-        return false;
-    },
-    sendCommand: function(command) {
-
-        //event.preventDefault();
-        var text = message.value + "\n";
-        var success = function() {
-            message.value = "";
-            messages.value += ("Us: " + text);
-            messages.scrollTop = messages.scrollHeight;
-        };
-        alert (typeof command);
-        alert(command);
-        bluetoothSerial.write(command, success);
         return false;
     },
     ondevicelist: function(devices) {
@@ -173,3 +158,9 @@ var app = {
         return func;
     }
 };
+
+function sendCommand(command){
+	alert(command);
+	bluetoothSerial.write(command, success);
+	alert(bluetoothSerial.write(command, success));
+}

@@ -66,7 +66,7 @@ limitations under the License.
 	</div>
 	<a class="command" id="led_on">led_on</a>
 	<a onclick="$('#message').val('led_off'); alert(typeof app.sendData);" class="command" id="led_off">led_off</a>
-	<a onclick="alert(bluetoothSerial.write);" class="command" id="alert">alert</a>
+	<a onclick="sendCommand('alert');" class="command" id="alert">alert</a>
 	<footer>
 		<div id="statusMessage"></div>
 	</footer>
