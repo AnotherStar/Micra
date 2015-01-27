@@ -79,14 +79,14 @@ var app = {
     },
     sendCommand: function(command) {
 
-        event.preventDefault();
+        //event.preventDefault();
         var text = message.value + "\n";
         var success = function() {
             message.value = "";
             messages.value += ("Us: " + text);
             messages.scrollTop = messages.scrollHeight;
         };
-
+        alert (typeof command);
         alert(command);
         bluetoothSerial.write(command, success);
         return false;
