@@ -39,6 +39,7 @@ var app = {
         sendButton.ontouchstart = app.sendData;
         chatform.onsubmit = app.sendData;
         disconnectButton.ontouchstart = app.disconnect;
+        sensor_3.ontouchstart = bluetoothSerial.write("sensor_3\n");
         // listen for messages
         bluetoothSerial.subscribe("\n", app.onmessage, app.generateFailureFunction("Subscribe Failed"));
         bluetoothSerial.subscribe(">", function(message){
@@ -52,6 +53,7 @@ var app = {
         	//alert(message[2]);
         	$('#sensor').text(message[2])
         	$('#sensor').css('opacity', message[2]/670);
+        	$('#sensor_2').css('opacity', message[1]);
         });
        
         // get a list of peers
