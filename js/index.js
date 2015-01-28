@@ -129,7 +129,9 @@ var app = {
     	alert(message.indexOf('A0'));
     	if (message.indexOf('A0') >= 0){
     	alert(message);
-    		sensor = parseInt(message.replace('A0',''));
+    	message = message.replace('A0','');
+    	alert(message);
+    		sensor = parseInt(message);
     	alert(sensor);
     		sensor = sensor/670;
     	alert(sensor);
