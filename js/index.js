@@ -41,16 +41,15 @@ var app = {
         disconnectButton.ontouchstart = app.disconnect;
         // listen for messages
         bluetoothSerial.subscribe("\n", app.onmessage, app.generateFailureFunction("Subscribe Failed"));
-        bluetoothSerial.subscribe("S11", function(message){
-        	alert('message S11 ' + message);
-        	message = message.replace('S11','');
-        	message = parseInt(message);
+        bluetoothSerial.subscribe(">", function(message){
+        	alert('>' + message);
+        	message = message.replace('>','');
+        	alert(message);
+        	message = message.split(';');
+        	alert(typeof message);
+        	alert(message);
         });
-        bluetoothSerial.subscribe("S12", function(message){
-        	alert('message S12 ' + message);
-        	message = message.replace('S12','');
-        	message = parseInt(message);
-        });
+       
         // get a list of peers
         setTimeout(app.list, 2000);
     },
@@ -82,7 +81,7 @@ var app = {
             messages.scrollTop = messages.scrollHeight;
         };
 
-        alert(text);
+        //alert(text);
         bluetoothSerial.write(text, success);
         return false;
     },
