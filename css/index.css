@@ -45,3 +45,10 @@ margin: 20px;
 	display: inline-block;
 	background: #ccc;
 }
+#sensor{
+	width: 50px;
+	height: 50px;
+	opacity: 0.5;
+	background: black;
+	position: absolute;
+}
