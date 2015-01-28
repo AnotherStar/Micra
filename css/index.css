@@ -50,7 +50,6 @@ margin: 20px;
 	height: 50px;
 	opacity: 0.5;
 	background: black;
-	position: absolute;
-	margin: 10px;
+	margin-left: 50px;
 	display: inline-block;
 }
