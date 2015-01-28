@@ -44,6 +44,7 @@ var app = {
         bluetoothSerial.subscribe(">", function(message){
         	message = message.replace('>','');
         	message = message.split(';');
+        	data = new Array;
         	for(var i = 0; i< message.length; i++){
         		if (message[i] !== ''){
 	        		data[i] = parseInt(message[i]);
