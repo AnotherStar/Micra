@@ -44,14 +44,14 @@ var app = {
         bluetoothSerial.subscribe(">", function(message){
         	message = message.replace('>','');
         	message = message.split(';');
-        	data = new Array;
-        	for(var i = 0; i< message.length; i++){
-        		if (message[i] !== ''){
-	        		data[i] = parseInt(message[i]);
-	        	}
+        	for(var i = 0; i < message.length; i++){
+	        	message[i] = parseInt(message[i]);
         	}
-        	alert(data[2]);
-        	$('#sensor').css('opacity', data[2]/670);
+        	alert(message);
+
+        	alert(message[2]);
+        	$('#sensor').text(message[2])
+        	$('#sensor').css('opacity', message[2]/670);
         });
        
         // get a list of peers
