@@ -126,20 +126,11 @@ var app = {
         app.setStatus("Disconnected");
     },
     onmessage: function(message) {
-    	alert(message.indexOf('A0'));
-    	if (message.indexOf('A0') >= 0){
-    	alert(message);
-    	message = message.replace('A0','');
-    	alert(message);
-    		sensor = parseInt(message);
-    	alert(sensor);
-    		sensor = sensor/670;
-    	alert(sensor);
-    	alert(typeof sensor);
-    		$('#sensor').css('opacity', sensor);
-    		$('#sensor').text(sensor);
-    	}
-        //messages.value += "Them: " + message;
+    	sensor = message.split('#');
+		for (var i = 1; i< sensor.length; i++) {
+			alert(sensor[i]);
+		};
+        messages.value += ">" + message;
         messages.scrollTop = messages.scrollHeight;
     },
     setStatus: function(message) { // setStatus
