@@ -47,9 +47,9 @@ var app = {
         	for(var i = 0; i < message.length; i++){
 	        	message[i] = parseInt(message[i]);
         	}
-        	alert(message);
+        	//alert(message);
 
-        	alert(message[2]);
+        	//alert(message[2]);
         	$('#sensor').text(message[2])
         	$('#sensor').css('opacity', message[2]/670);
         });
