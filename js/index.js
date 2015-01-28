@@ -41,6 +41,9 @@ var app = {
         disconnectButton.ontouchstart = app.disconnect;
         // listen for messages
         bluetoothSerial.subscribe("\n", app.onmessage, app.generateFailureFunction("Subscribe Failed"));
+        bluetoothSerial.subscribe("S11"), function(message){
+        	alert('message S11 ' + message);
+        });
         // get a list of peers
         setTimeout(app.list, 2000);
     },
