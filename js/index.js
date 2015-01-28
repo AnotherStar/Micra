@@ -160,7 +160,7 @@ var app = {
 };
 
 function sendCommand(command){
-	alert('command: ' command);
+	alert('command: ' + command);
 	bluetoothSerial.write(command, success);
 	alert(typeof bluetoothSerial.write(command, success));
 }
