@@ -126,7 +126,7 @@ var app = {
         app.setStatus("Disconnected");
     },
     onmessage: function(message) {
-    	if (message.indexOf('A0')){
+    	if (message.indexOf('A0')>=0){
     		sensor = parseInt(message.replace('A0',''));
     		sensor = sensor/670;
     		$('#sensor').css('opacity', sensor);
