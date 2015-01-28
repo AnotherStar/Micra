@@ -39,7 +39,7 @@ var app = {
         sendButton.ontouchstart = app.sendData;
         chatform.onsubmit = app.sendData;
         disconnectButton.ontouchstart = app.disconnect;
-        sensor_3.ontouchstart = bluetoothSerial.write("sensor_3\n");
+        sensor_3.ontouchstart = bluetoothSerial.write("\nsensor_3\n");
         // listen for messages
         bluetoothSerial.subscribe("\n", app.onmessage, app.generateFailureFunction("Subscribe Failed"));
         bluetoothSerial.subscribe(">", function(message){
