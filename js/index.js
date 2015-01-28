@@ -42,12 +42,15 @@ var app = {
         // listen for messages
         bluetoothSerial.subscribe("\n", app.onmessage, app.generateFailureFunction("Subscribe Failed"));
         bluetoothSerial.subscribe(">", function(message){
-        	alert('>' + message);
         	message = message.replace('>','');
-        	alert(message);
         	message = message.split(';');
-        	alert(typeof message);
-        	alert(message);
+        	for(var i = 0; i< message.length; i++){
+        		if (message[i] !== ''){
+	        		data[i] = parseInt(message[i]);
+	        	}
+        	}
+        	alert(data[2]);
+        	$('#sensor').css('opacity', data[2]/670);
         });
        
         // get a list of peers
