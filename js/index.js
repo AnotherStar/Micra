@@ -130,6 +130,7 @@ var app = {
     		sensor = parseInt(message.replace('A0',''));
     		sensor = sensor/670;
     		$('#sensor').css('opacity', sensor);
+    		$('#sensor').text(sensor);
     	}
         //messages.value += "Them: " + message;
         messages.scrollTop = messages.scrollHeight;
