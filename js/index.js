@@ -41,9 +41,9 @@ var app = {
         disconnectButton.ontouchstart = app.disconnect;
         sensor_3.ontouchstart = bluetoothSerial.write("\nsensor_3\n");
         // listen for messages
-        bluetoothSerial.subscribe("\n", app.onmessage, app.generateFailureFunction("Subscribe Failed"));
-        bluetoothSerial.subscribe(">", function(message){
-        	message = message.replace('>','');
+        //bluetoothSerial.subscribe("\n", app.onmessage, app.generateFailureFunction("Subscribe Failed"));
+        bluetoothSerial.subscribe("\n", function(message){
+        	message = message.replace("\n",'');
         	message = message.split(';');
         	for(var i = 0; i < message.length; i++){
 	        	message[i] = parseInt(message[i]);
