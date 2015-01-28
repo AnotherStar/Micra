@@ -126,9 +126,12 @@ var app = {
         app.setStatus("Disconnected");
     },
     onmessage: function(message) {
+    	alert('1 ' + message);
     	sensor = message.split('#');
+    	alert('2 ' + typeof sensor);
+    	alert('3 ' + sensor);
 		for (var i = 1; i< sensor.length; i++) {
-			alert(sensor[i]);
+			alert('4 ' + sensor[i]);
 		};
         messages.value += ">" + message;
         messages.scrollTop = messages.scrollHeight;
