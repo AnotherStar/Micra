@@ -84,18 +84,6 @@ limitations under the License.
 </html>
 
 <script type="text/javascript">
-    function setViewport(viewPortWidth) {
-	    //if ((navigator.userAgent.toLowerCase().indexOf("android")!=-1)) {
-	        var wW0 = window.screen.width;
-	        alert(wW0);
-	        alert(window.screen.height);
-	        var scale = wW0/viewPortWidth;
-	        alert(scale);
-
-	        var vPort = "width="+viewPortWidth+", maximum-scale="+scale+", minimum-scale="+scale+", initial-scale="+scale+", user-scalable=yes";
-	        document.getElementById("viewport").setAttribute("content", vPort);
-	    //}
-    }
     
 </script>
 
@@ -116,11 +104,10 @@ limitations under the License.
 
 	$(document).ready(function() {
 
-		setViewport(1184);
-
-		app.initialize();
-
-		setViewport(1184);
+super.loadUrl(Config.getStartUrl(),1);   
+WebSettings settings = appView.getSettings(); 
+settings.setUseWideViewPort(true); 
+settings.setLoadWithOverviewMode(true);
 
 		$.plugin('Dashboard', Dashboard);
 		$('#dash_container').Dashboard();
