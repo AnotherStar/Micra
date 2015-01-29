@@ -1,3 +1,7 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
 .fadein {
 opacity: 1;
 -webkit-transition: opacity 1s ease-in;
@@ -52,4 +56,45 @@ margin: 20px;
 	background: black;
 	margin-left: 50px;
 	display: inline-block;
+}
+
+
+#dash_container {
+    background: url("images/dash_bg.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    height: 720px;
+    margin-bottom: 20px;
+    width: 1184px;
+}
+#dash {
+    height: 720px;
+    position: absolute;
+    width: 1184px;
+}
+#temp {
+    height: 170px;
+    left: 945px;
+    position: absolute;
+    top: 30px;
+    width: 170px;
+}
+#speed {
+    color: white;
+    font-size: 300px;
+    height: 270px;
+    line-height: 250px;
+    margin-left: 367px;
+    margin-top: 400px;
+    position: absolute;
+    text-align: center;
+    width: 450px;
+}
+#rpm {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 80px;
+    margin-left: 442px;
+    text-align: center;
+    top: 20px;
+    width: 300px;
 }
