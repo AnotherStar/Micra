@@ -60,12 +60,13 @@ margin: 20px;
 
 
 #dash_container {
-    background: url("images/dash_bg.png") no-repeat scroll center center rgba(0, 0, 0, 0);
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
     height: 720px;
     margin-bottom: 20px;
     width: 1184px;
+}
+#background{
+	position: absolute;
+	z-index: -1;
 }
 #dash {
     height: 720px;
@@ -97,4 +98,8 @@ margin: 20px;
     text-align: center;
     top: 20px;
     width: 300px;
+}
+#timestamp{
+	position: absolute;
+	color: white;
 }
