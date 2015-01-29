@@ -84,16 +84,15 @@ limitations under the License.
 </html>
 
 <script type="text/javascript">
-    var viewPortWidth = 1184;
-    function setViewport() {
-    if ((navigator.userAgent.toLowerCase().indexOf("android")!=-1)) {
-        var wW0 = window.screen.width;
-        var scale = wW0/viewPortWidth;
-        var vPort = "width="+viewPortWidth+", maximum-scale="+scale+", minimum-scale="+scale+", initial-scale="+scale+", user-scalable=yes";
-        document.getElementById("viewport").setAttribute("content", vPort);
+    function setViewport(viewPortWidth) {
+	    //if ((navigator.userAgent.toLowerCase().indexOf("android")!=-1)) {
+	        var wW0 = window.screen.width;
+	        var scale = wW0/viewPortWidth;
+	        var vPort = "width="+viewPortWidth+", maximum-scale="+scale+", minimum-scale="+scale+", initial-scale="+scale+", user-scalable=yes";
+	        document.getElementById("viewport").setAttribute("content", vPort);
+	    //}
     }
-    }
-    setViewport();
+    
 </script>
 
 <script>
@@ -112,7 +111,12 @@ limitations under the License.
 	var speed_impulse_old = 0;
 
 	$(document).ready(function() {
+
+		setViewport(1184);
+
 		app.initialize();
+
+		setViewport(1184);
 
 		$.plugin('Dashboard', Dashboard);
 		$('#dash_container').Dashboard();
