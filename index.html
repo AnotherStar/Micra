@@ -87,7 +87,11 @@ limitations under the License.
     function setViewport(viewPortWidth) {
 	    //if ((navigator.userAgent.toLowerCase().indexOf("android")!=-1)) {
 	        var wW0 = window.screen.width;
+	        alert(wW0);
+	        alert(window.screen.height);
 	        var scale = wW0/viewPortWidth;
+	        alert(scale);
+
 	        var vPort = "width="+viewPortWidth+", maximum-scale="+scale+", minimum-scale="+scale+", initial-scale="+scale+", user-scalable=yes";
 	        document.getElementById("viewport").setAttribute("content", vPort);
 	    //}
