@@ -48,6 +48,13 @@ var app = {
         	for(var i = 0; i < message.length; i++){
 	        	message[i] = parseInt(message[i]);
         	}
+
+        	var tacho = message[2].split(',');
+        	for(var i = 0; i < tacho.length; i++){
+        		tacho[i] = parseInt(tacho[i]);
+        	}
+        	tacho = Appromixation(tacho);
+			dash.sensorTacho(tacho);
         	//alert(message);
 
         	//alert(message[2]);

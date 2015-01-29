@@ -106,32 +106,32 @@ limitations under the License.
 			var temp = Math.round((90 + Math.random() * 20)*10)/10;
 			//Мгновеная температура каждые 10 сек
 			dash.sensorTemp(temp);
-			dash.setSpeed(Math.round(temp));
+			//dash.setSpeed(Math.round(temp));
 		}, 1000);
 
 		//onMessage
-		setInterval(function(){
-			loop_1();
-		}, 25);
+		//setInterval(function(){
+		//	loop_1();
+		//}, 25);
 
-		setInterval(function(){
-			loop_2();
-		}, 500);
+		//setInterval(function(){
+		//	loop_2();
+		//}, 500);
 
-		generatorTacho();
-		generatorSpeed();
+		//generatorTacho();
+		//generatorSpeed();
 
 	});
 
-function loop_1(){
-	a = Appromixation(tacho_delay_array);
-	dash.sensorTacho(a);
-}
+//function loop_1(){
+//	a = Appromixation(tacho_delay_array);
+//	dash.sensorTacho(a);
+//}
 
-function loop_2(){
-	b = Appromixation(speed_delay_array);
-	dash.setSpeed(b);
-}
+//function loop_2(){
+//	b = Appromixation(speed_delay_array);
+//	dash.setSpeed(b);
+//}
 
 function Appromixation(array){
 	var min = array[0];
