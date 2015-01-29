@@ -47,7 +47,7 @@ var app = {
         	message = message.split(';');
         	
         	for(var i = 0; i < message.length; i++){
-	        	message[i] = parseInt(message[i]);
+	        	message[i] = parseFloat(message[i]);
         	}
 
         	$('#input_1').text(message[0]);
