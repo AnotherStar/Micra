@@ -48,7 +48,7 @@ var app = {
         	for(var i = 0; i < message.length; i++){
 	        	message[i] = parseInt(message[i]);
         	}
-        	alert(message[2]);
+        	alert('message[2]: ' + message[2]);
         	var tacho = message[2].split(',');
         	for(var i = 0; i < tacho.length; i++){
         		tacho[i] = parseInt(tacho[i]);
@@ -58,8 +58,8 @@ var app = {
         	alert(tacho);
 
         	var tacho_ap = Appromixation(tacho);
-			dash.sensorTacho(tacho_ap);
-        	alert(tacho_ap);
+			dash.sensorTacho(tacho_ap / 10);
+        	alert(' Appromixation: ' + tacho_ap / 10);
 
         	//alert(message[2]);
         	$('#sensor').text(message[2])
