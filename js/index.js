@@ -44,19 +44,19 @@ var app = {
         //bluetoothSerial.subscribe("\n", app.onmessage, app.generateFailureFunction("Subscribe Failed"));
         bluetoothSerial.subscribe("\n", function(message){
         	message = message.replace("\n",'');
-        	var bt_data = message.split(';');
+        	message = message.split(';');
         	
         	for(var i = 0; i < message.length; i++){
 	        	message[i] = parseInt(message[i]);
         	}
 
-        	dash.sensorTacho(message[2]);
-        	alert(typeof message[2]);
-
-        	$('#input').text(message[2]);
-        	$('#input_2').text(typeof message[2]);
+        	$('#input_1').text(message[0]);
+        	$('#input_2').text(message[1]);
+        	$('#input_3').text(message[2]);
         	$('#sensor').css('opacity', message[2]/670);
         	$('#sensor_2').css('opacity', message[1]);
+
+        	dash.sensorTacho(message[2]);
         });
        
         // get a list of peers
