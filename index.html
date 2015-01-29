@@ -23,21 +23,6 @@ limitations under the License.
 <title>Bluetooth Serial Chat</title>
 </head>
 	<body>
-		<div class="topcoat-navigation-bar">
-			<div class="topcoat-navigation-bar__item left quarter">
-				<a class="topcoat-icon-button--quiet">
-					<span class="topcoat-icon topcoat-icon--menu-stack"></span>
-				</a>
-			</div>
-			<div class="topcoat-navigation-bar__item center half">
-				<h1 class="topcoat-navigation-bar__title">Bluetooth Chat</h1>
-			</div>
-			<div class="topcoat-navigation-bar__item right quarter">
-				<a class="topcoat-icon-button--quiet">
-					<span class="topcoat-icon topcoat-icon--edit"></span>
-				</a>
-			</div>
-		</div>
 		<div id="content">
 			<div id="connection">
 				<div style="margin: 20px">
@@ -88,16 +73,37 @@ limitations under the License.
 		<script type="text/javascript" src="js/paper.js"></script>
 		<script type="text/javascript" src="js/dash.js"></script>
 		<script type="text/javascript">
-		app.initialize();
+		
 		</script>
 	</body>
 </html>
 
 <script>
-$(document).ready(function() {
-	//message = '#63000#0#669#669#669#';
-	
-});
+
+	var path;
+	var points;
+	var dash;
+	var tacho;
+	//Переменные тахометра
+	var tacho_sensor_length = 100;
+	var tacho_delay_array = new Array();
+	var tacho_impulse_old = 0;
+	//Переменные спидометра
+	var speed_sensor_length = 30;
+	var speed_delay_array = new Array();
+	var speed_impulse_old = 0;
+
+	$(document).ready(function() {
+		app.initialize();
+
+		$.plugin('Dashboard', Dashboard);
+		$('#dash_container').Dashboard();
+		dash = $('#dash_container').data('Dashboard');
+
+		alert(typeof dash);
+
+	});
+
 </script>
 
 
