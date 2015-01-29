@@ -1,7 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    width: 1196px
+    width: 1196px;
 }
 .fadein {
 opacity: 1;
@@ -62,7 +62,7 @@ margin: 20px;
 
 #dash_container {
     height: 720px;
-    width: 1184px;
+    width: 1196px;
 }
 #background{
 	position: absolute;
