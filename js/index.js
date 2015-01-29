@@ -45,16 +45,17 @@ var app = {
         bluetoothSerial.subscribe("\n", function(message){
         	message = message.replace("\n",'');
         	message = message.split(';');
+        	
         	for(var i = 0; i < message.length; i++){
 	        	message[i] = parseInt(message[i]);
         	}
 
-        	tacho = message[2];
-        	dash.sensorTacho(tacho);
-        	//alert(message);
+        	//tacho = message[2];
+        	//dash.sensorTacho(tacho);
+        	alert(typeof message[i]);
 
-        	//alert(message[2]);
-        	$('#sensor').text(message[2])
+        	$('#input').text(message[2]);
+        	$('#input_2').text(typeof message[i]);
         	$('#sensor').css('opacity', message[2]/670);
         	$('#sensor_2').css('opacity', message[1]);
         });

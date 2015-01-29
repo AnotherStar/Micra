@@ -99,8 +99,8 @@ margin: 20px;
     top: 20px;
     width: 300px;
 }
-#timestamp{
-	position: absolute;
+#timestamp,#input_1,#input_2{
+	position: relative;
 	color: white;
 }
 #statusMessage{
