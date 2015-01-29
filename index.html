@@ -15,8 +15,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name = "format-detection" content = "telephone=no"/>
 <meta content="width=1184" name="viewport">
 <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -100,9 +98,73 @@ limitations under the License.
 		$('#dash_container').Dashboard();
 		dash = $('#dash_container').data('Dashboard');
 
-		alert(typeof dash);
+		setInterval(function(){
+			var temp = Math.round((90 + Math.random() * 20)*10)/10;
+			//Мгновеная температура каждые 10 сек
+			dash.sensorTemp(temp);
+			dash.setSpeed(Math.round(temp));
+		}, 1000);
+
+		//onMessage
+		setInterval(function(){
+			loop_1();
+		}, 25);
+
+		setInterval(function(){
+			loop_2();
+		}, 500);
+		
+		generatorTacho();
+		generatorSpeed();
 
 	});
+
+function loop_1(){
+	a = Appromixation(tacho_delay_array);
+	dash.sensorTacho(a);
+}
+
+function loop_2(){
+	b = Appromixation(speed_delay_array);
+	dash.setSpeed(b);
+}
+
+function Appromixation(array){
+	var min = array[0];
+	var max = array[0];
+	var array_summ = 0;
+	for (var i=0; i<array.length; i++){
+		if (max < array[i]){max = array[i]}
+		if (min > array[i]){min = array[i]}
+		array_summ = array_summ + array[i];
+	}
+	array_summ = array_summ - min - max;
+	return array_summ/(array.length - 2);
+}
+
+function generatorTacho(){
+	tacho_impulse_delay = Date.now() - tacho_impulse_old;
+	tacho_impulse_old = Date.now();
+	for (var i=0; i<tacho_sensor_length; i++){
+		tacho_delay_array[i] = tacho_delay_array[i + 1];
+	}
+	tacho_delay_array[tacho_sensor_length - 1] = tacho_impulse_delay;
+	setTimeout(function(){
+		generatorTacho();
+	}, parseInt($('#control_1').val()));
+}
+
+function generatorSpeed(){
+	speed_impulse_delay = Date.now() - speed_impulse_old;
+	speed_impulse_old = Date.now();
+	for (var i=0; i<speed_sensor_length; i++){
+		speed_delay_array[i] = speed_delay_array[i + 1];
+	}
+	speed_delay_array[speed_sensor_length - 1] = speed_impulse_delay;
+	setTimeout(function(){
+		generatorSpeed();
+	}, parseInt($('#control_2').val()));
+}
 
 </script>
 
