@@ -7,6 +7,7 @@
 	<gap:platform name="android" />
 	<preference name="orientation" value="landscape"/>
 	<preference name="fullscreen" value="true"/>
+	<preference name="EnableViewportScale" value="true" />
 	<preference name="enableviewportscale" value="true" />
 	<gap:plugin name="com.megster.cordova.bluetoothserial" />
 	<gap:plugin name="org.apache.cordova.dialogs" />

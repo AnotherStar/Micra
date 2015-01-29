@@ -15,7 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <head>
-<meta name="viewport" id="viewport" content="width=1184">
+<meta name="viewport" id="viewport" content="width=1184 maximum-scale=0.5 minimum-scale=0.5 initial-scale=0.5 user-scalable=yes">
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>Bluetooth Serial Chat</title>
 </head>
@@ -83,10 +83,6 @@ limitations under the License.
 	</body>
 </html>
 
-<script type="text/javascript">
-    
-</script>
-
 <script>
 
 	var path;
@@ -104,10 +100,7 @@ limitations under the License.
 
 	$(document).ready(function() {
 
-super.loadUrl(Config.getStartUrl(),1);   
-WebSettings settings = appView.getSettings(); 
-settings.setUseWideViewPort(true); 
-settings.setLoadWithOverviewMode(true);
+		app.initialize();
 
 		$.plugin('Dashboard', Dashboard);
 		$('#dash_container').Dashboard();
