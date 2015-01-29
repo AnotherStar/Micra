@@ -15,7 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <head>
-<meta content="width=1184" name="viewport">
+<meta name="viewport" id="viewport" content="width=1184">
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>Bluetooth Serial Chat</title>
 </head>
@@ -82,6 +82,19 @@ limitations under the License.
 		</script>
 	</body>
 </html>
+
+<script type="text/javascript">
+    var viewPortWidth = 1184;
+    function setViewport() {
+    if ((navigator.userAgent.toLowerCase().indexOf("android")!=-1)) {
+        var wW0 = window.screen.width;
+        var scale = wW0/viewPortWidth;
+        var vPort = "width="+viewPortWidth+", maximum-scale="+scale+", minimum-scale="+scale+", initial-scale="+scale+", user-scalable=yes";
+        document.getElementById("viewport").setAttribute("content", vPort);
+    }
+    }
+    setViewport();
+</script>
 
 <script>
 
