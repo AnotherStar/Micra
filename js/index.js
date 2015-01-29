@@ -129,6 +129,7 @@ var app = {
         connection.style.display = "none";
         chat.style.display = "block";
         app.setStatus("Connected");
+        $('#menu').hide();
     },
     ondisconnect: function(reason) {
         var details = "";
@@ -139,6 +140,7 @@ var app = {
         app.enable(connectButton);
         chat.style.display = "none";
         app.setStatus("Disconnected");
+        $('#menu').show();
     },
     onmessage: function(message) {
     	alert('1 ' + message);

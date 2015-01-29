@@ -1,6 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
+    width: 1184px
 }
 .fadein {
 opacity: 1;
@@ -53,7 +54,7 @@ margin: 20px;
 	width: 50px;
 	height: 50px;
 	opacity: 0.5;
-	background: black;
+	background: white;
 	margin-left: 50px;
 	display: inline-block;
 }
@@ -61,7 +62,6 @@ margin: 20px;
 
 #dash_container {
     height: 720px;
-    margin-bottom: 20px;
     width: 1184px;
 }
 #background{
@@ -102,4 +102,8 @@ margin: 20px;
 #timestamp{
 	position: absolute;
 	color: white;
+}
+#statusMessage{
+	color: white;
+	position: absolute;
 }

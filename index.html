@@ -16,15 +16,15 @@ limitations under the License.
 -->
 <head>
 <meta content="width=1184" name="viewport">
-<link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>Bluetooth Serial Chat</title>
 </head>
 	<body>
+
+	<div id="menu">
 		<div id="content">
 			<div id="connection">
 				<div style="margin: 20px">
-					Device: <br/>
 					<select id="deviceList">
 						<option>Discovering</option>
 					</select>
@@ -47,13 +47,19 @@ limitations under the License.
 				</div>
 			</div>
 		</div>
-		<div id="sensor"></div>
-		<div id="sensor_2"></div>
-		<div id="sensor_3"></div>
+		
+	</div>
 		
 
 		<div id="dash_container">
+
 			<img id="background"src="images/dash_bg.png"/>
+			<div style="position: absolute">
+				<div id="sensor"></div>
+				<div id="sensor_2"></div>
+				<div id="sensor_3"></div>
+			</div>
+			<div id="statusMessage">1</div>
 			<canvas id="dash" width="1184" height="720"></canvas>
 			<div id="speed">---</div>
 			<div id="rpm">---</div>
@@ -62,8 +68,9 @@ limitations under the License.
 		</div>
 
 		<footer>
-			<div id="statusMessage"></div>
+			
 		</footer>
+
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/bluetoothSerial.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
@@ -113,7 +120,7 @@ limitations under the License.
 		setInterval(function(){
 			loop_2();
 		}, 500);
-		
+
 		generatorTacho();
 		generatorSpeed();
 
@@ -151,7 +158,7 @@ function generatorTacho(){
 	tacho_delay_array[tacho_sensor_length - 1] = tacho_impulse_delay;
 	setTimeout(function(){
 		generatorTacho();
-	}, parseInt($('#control_1').val()));
+	}, 50);
 }
 
 function generatorSpeed(){
@@ -163,7 +170,7 @@ function generatorSpeed(){
 	speed_delay_array[speed_sensor_length - 1] = speed_impulse_delay;
 	setTimeout(function(){
 		generatorSpeed();
-	}, parseInt($('#control_2').val()));
+	}, 50);
 }
 
 </script>
