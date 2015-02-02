@@ -17,18 +17,24 @@ limitations under the License.
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no, target-densitydpi=device-dpi"/>
 <link rel="stylesheet" type="text/css" href="css/index.css" />
-<title>Bluetooth Serial Chat</title>
+<title>ArduinoMotoDash</title>
 </head>
 	<body>
 
-	<div id="menu">
+	<!-- Заставка -->
+	<div id="splash">
+		<div id="progressbar">
+			<div id="progress"></div>
+		</div>
+	</div>
+
+	<!-- Подключение -->
+	<div id="connection">
 		<div id="content">
 			<div id="connection">
-				<div style="margin: 20px">
-					<select id="deviceList">
-						<option>Discovering</option>
-					</select>
-				</div>
+				<select id="deviceList">
+					<option>Discovering</option>
+				</select>
 				<p>
 					<a class="topcoat-button--large is-disabled" id="connectButton">Connect</a>
 				</p>
@@ -47,13 +53,11 @@ limitations under the License.
 				</div>
 			</div>
 		</div>
-		
 	</div>
 		
 
 		<div id="dash_container">
 
-			<img id="background"src="images/dash_bg.png"/>
 			<div style="position: absolute">
 				<div id="sensor"></div>
 				<div id="sensor_2"></div>
@@ -99,7 +103,14 @@ limitations under the License.
 
 	$(document).ready(function() {
 
+	//Прогресс-бар и анимация заставки.
+	$('#progress').animate({width: 280}, 2000);
+	$('#splash').delay(2000).animate({marginTop: -720}, 500);
+
 		app.initialize();
+
+
+		
 
 		$.plugin('Dashboard', Dashboard);
 		$('#dash_container').Dashboard();
