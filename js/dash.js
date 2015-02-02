@@ -58,7 +58,7 @@ var Dashboard = {
 		x0 = 592;
 		y0 = 670;
 
-		tacho.translate(new Point(x0 - 531, y0 - 25/2));
+		tacho.translate(new Point(x0 - 519, y0 - 25/2));
 		
 
 		view.onFrame = function(event) {
