@@ -9,46 +9,45 @@
 	<body>
 
 	<!-- Заставка -->
-	<div id="splash">
-		<div id="progressbar">
-			<div id="progress"></div>
+	<div id="1" class="part">
+		<div id="splash">
+			<div id="progressbar">
+				<div id="progress"></div>
+			</div>
 		</div>
 	</div>
 
 	<!-- Подключение -->
-	<div id="connection">
-		<div id="content">
-			<div id="connection_btns">
+	<div id="2" class="part" style="height: 720px">
+		<div id="connection">
+			<div id="content">
+				<div id="connection_btns">
 
-				<select id="deviceList">
-					<option>Discovering</option>
-				</select>
+					<select id="deviceList">
+						<option>Discovering</option>
+					</select>
 
-				<a id="connectButton">Connect</a>
+					<a id="connectButton">Connect</a>
 
-				<a id="listButton">Device list</a>
+					<a id="listButton">Device list</a>
 
-				<div id="statusMessage">Status</div>
+					<div id="statusMessage">Status</div>
 
-				<a id="disconnectButton">Disconnect</a>
-				<a id="view">View</a>
-			</div>
-			<div id="chat">
-				<form id="chatform">
-				<input type="text" id="message" placeholder="Message" />
-				<a id="sendButton">Send</a>
-					<textarea id="messages" readonly>123</textarea>
-						
-					
-				</form>
-				<div class="center">
-					
+					<a id="disconnectButton">Disconnect</a>
+					<a onclick="showPart(3)" id="view">View</a>
+				</div>
+				<div id="chat">
+					<form id="chatform">
+					<input type="text" id="message" placeholder="Message" />
+					<a id="sendButton">Send</a>
+						<textarea id="messages" readonly>123</textarea>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 		
-
+	<div id="3" class="part">
 		<div id="dash_container">
 
 			<div style="position: absolute">
@@ -57,16 +56,17 @@
 				<div id="sensor_3"></div>
 			</div>
 
-			
 			<canvas id="dash" width="1184" height="720"></canvas>
-			<div id="speed">---</div>
+			<div onclick="showPart(2)" id="speed">---</div>
 			<div id="rpm">---</div>
 			<canvas id="temp"></canvas>
 			<div id="timestamp">---</div>
 			<div id="input_1">1---</div>
 			<div id="input_2">2---</div>
 			<div id="input_3">3---</div>
+
 		</div>
+	</div>
 
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/bluetoothSerial.js"></script>
@@ -97,13 +97,18 @@
 
 	$(document).ready(function() {
 
-	//Прогресс-бар и анимация заставки.
-	$('#progress').animate({width: 280}, 2000);
-	$('#splash').delay(2000).animate({marginTop: -720}, 500);
-
-	$('#speed,#view').on('click', function(){
-		$('#connection').toggleClass('hidden');
+	$('.part').each(function(el, index){
+		$(this).css('height', 0);
 	});
+	$('.part#1').css('height', 720);
+
+	showPart(1);
+	$('#progress').animate({width: 280}, 2000, function(){
+		showPart(2);
+	});
+	//Прогресс-бар и анимация заставки.
+	
+	//$('#splash').delay(2000).animate({marginTop: -720}, 500);
 
 		app.initialize();
 
@@ -182,6 +187,15 @@ function generatorSpeed(){
 	}, 50);
 }
 
+function showPart(number){
+	$('.part').each(function(el, index){
+		if(parseInt($(this).attr('id')) !== number){
+			$(this).animate({height: 0}, 1000);
+		} else {
+			$(this).animate({height: 720}, 1000);
+		}
+	});
+}
 </script>
 
 

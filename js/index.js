@@ -116,7 +116,7 @@ var app = {
     },
     onconnect: function() {
         app.setStatus("Connected");
-        $('#connection').addClass('hidden');
+        showPart(3);
     },
     ondisconnect: function(reason) {
         var details = "";
@@ -125,8 +125,7 @@ var app = {
         }
         app.enable(connectButton);
         app.setStatus("Disconnected");
-        $('#connection').removeClass('hidden');
-
+        showPart(2);
     },
     onmessage: function(message) {
     	alert('1 ' + message);
