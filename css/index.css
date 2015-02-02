@@ -21,7 +21,6 @@ body, html {
 .fadeout {opacity: 0;-webkit-transition: opacity 1s ease-out;}
 
 #splash{
-    display: none;
     height: 720px;
     width: 1196px;
     background: url('../images/splash_bg.png') center center no-repeat black;
@@ -98,12 +97,9 @@ body, html {
     color: white;
 }
 #messages{
-    width: 600px;
-    height: 467px;
     background: #222;
     color: white;
     font-size: 25px;
-    font-family: 'Courier';
     padding: 20px;
 
 }

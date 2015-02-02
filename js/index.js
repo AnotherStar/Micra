@@ -126,12 +126,9 @@ var app = {
         if (reason) {
             details += ": " + JSON.stringify(reason);
         }
-        connection.style.display = "block";
         app.enable(connectButton);
-        chat.style.display = "none";
         app.setStatus("Disconnected");
-        //$('#menu').show();
-        $('#connection').animate({height: 0}, 2000);
+        $('#connection').removeClass('hidden');
 
     },
     onmessage: function(message) {
