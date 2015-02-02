@@ -92,7 +92,7 @@ body, html {
 #message{
     float: left;
     padding: 15px 20px;
-    width: 453px;
+    width: 418px;
     background: #222;
     color: white;
 }
@@ -101,11 +101,16 @@ body, html {
     color: white;
     font-size: 25px;
     padding: 20px;
+    position: absolute;
+    width: 600px;
+    height: 480px;
+
+    
 
 }
 #sendButton{
-    margin-left: 500px;
-    width: 90px;
+    margin-left: 470px;
+    width: 120px;
 }
 
 .command{

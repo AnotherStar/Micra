@@ -115,11 +115,8 @@ var app = {
         }
     },
     onconnect: function() {
-        connection.style.display = "none";
-        chat.style.display = "block";
         app.setStatus("Connected");
         $('#connection').addClass('hidden');
-       // $('#menu').hide();
     },
     ondisconnect: function(reason) {
         var details = "";
