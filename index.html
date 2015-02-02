@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!--
-Chat Example for Bluetooth Serial PhoneGap Plugin
-http://github.com/don/BluetoothSerial
-Copyright 2013 Don Coleman
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no, target-densitydpi=device-dpi"/>
 <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -31,25 +18,31 @@ limitations under the License.
 	<!-- Подключение -->
 	<div id="connection">
 		<div id="content">
-			<div id="connection">
+			<div id="connection_btns">
+
 				<select id="deviceList">
 					<option>Discovering</option>
 				</select>
-				<p>
-					<a class="topcoat-button--large is-disabled" id="connectButton">Connect</a>
-				</p>
-				<p>
-					<a class="topcoat-button--large" id="listButton">List Devices</a>
-				</p>
+
+				<a id="connectButton">Connect</a>
+
+				<a id="listButton">Device list</a>
+
+				<div id="statusMessage">Status</div>
+
+				<a id="disconnectButton">Disconnect</a>
+				<a id="view">View</a>
 			</div>
 			<div id="chat">
 				<form id="chatform">
-					<textarea id="messages" readonly></textarea>
-						<input type="text" class="topcoat-text-input" id="message" placeholder="Message" />
-					<a class="topcoat-button--cta" id="sendButton">Send</a>
+				<input type="text" id="message" placeholder="Message" />
+				<a id="sendButton">Send</a>
+					<textarea id="messages" readonly>123</textarea>
+						
+					
 				</form>
 				<div class="center">
-					<a class="topcoat-button" id="disconnectButton">Disconnect</a>
+					
 				</div>
 			</div>
 		</div>
@@ -63,7 +56,8 @@ limitations under the License.
 				<div id="sensor_2"></div>
 				<div id="sensor_3"></div>
 			</div>
-			<div id="statusMessage">1</div>
+
+			
 			<canvas id="dash" width="1184" height="720"></canvas>
 			<div id="speed">---</div>
 			<div id="rpm">---</div>
@@ -106,6 +100,10 @@ limitations under the License.
 	//Прогресс-бар и анимация заставки.
 	$('#progress').animate({width: 280}, 2000);
 	$('#splash').delay(2000).animate({marginTop: -720}, 500);
+
+	$('#speed,#view').on('click', function(){
+		$('#connection').toggleClass('hidden');
+	});
 
 		app.initialize();
 

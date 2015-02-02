@@ -3,10 +3,25 @@ body, html {
     padding: 0;
     width: 1196px;
 }
+
+@font-face {
+    font-family: "Roboto";
+    src: url('../css/roboto_condensed.ttf');   
+}
+
+*{
+    font-size: 40px;
+    font-family: "Roboto";
+}
+
+
+
+
 .fadein {opacity: 1;-webkit-transition: opacity 1s ease-in;}
 .fadeout {opacity: 0;-webkit-transition: opacity 1s ease-out;}
 
 #splash{
+    display: none;
     height: 720px;
     width: 1196px;
     background: url('../images/splash_bg.png') center center no-repeat black;
@@ -25,14 +40,76 @@ body, html {
     margin: 5px;
     width: 0;
 }
+#connection_btns{
+    background: #222;
+    padding: 50px;
+    float: left;
+    height: 620px;
 
+}
 #connection{
     height: 720px;
     width: 1196px;
+    overflow: hidden;
+    transition: all 1s;
+}
+.hidden{
+    height: 0px !important;
 }
 #deviceList{
-    font-size: 30px;
     border: 3px solid #ccc;
+    padding: 10px 20px;
+    background: #000;
+    color: white;
+    width: 350px;
+    margin-bottom: 30px;
+
+}
+#connectButton,#listButton,#disconnectButton,#sendButton,#view{
+    background: linear-gradient(to bottom, #666, #000, #222);
+    padding: 15px 25px;
+    border: 2px solid #ccc;
+    color: white;
+    border-radius: 5px;
+    width: 300px;
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#statusMessage{
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#chat{
+    padding: 50px;
+    width: 642px;
+    height: 620px;
+    background: black;
+    margin-left: 453px;
+    border-left: 1px solid #ccc;
+}
+#message{
+    float: left;
+    padding: 15px 20px;
+    width: 453px;
+    background: #222;
+    color: white;
+}
+#messages{
+    width: 600px;
+    height: 467px;
+    background: #222;
+    color: white;
+    font-size: 25px;
+    font-family: 'Courier';
+    padding: 20px;
+
+}
+#sendButton{
+    margin-left: 500px;
+    width: 90px;
 }
 
 .command{
@@ -98,8 +175,4 @@ body, html {
 #timestamp,#input_1,#input_2,#input_3{
 	position: relative;
 	color: white;
-}
-#statusMessage{
-	color: white;
-	position: absolute;
 }
