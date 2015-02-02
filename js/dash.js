@@ -37,7 +37,7 @@ var Dashboard = {
 			strokeCap: 'round',
 		});
 		for(var i = 0; i <= 30; i++){
-			temp_plot.add(new Point(945 + i*5 + 10, 30 + 150 + 10));}
+			temp_plot.add(new Point(951 + i*5 + 10, 30 + 150 + 10));}
 		this.temp = new Array;
 		for (var i = 0; i <= 30; i++){
 			this.temp[i] = 0;
@@ -58,7 +58,7 @@ var Dashboard = {
 		x0 = 592;
 		y0 = 670;
 
-		tacho.translate(new Point(x0 - 525, y0 - 25/2));
+		tacho.translate(new Point(x0 - 531, y0 - 25/2));
 		
 
 		view.onFrame = function(event) {
