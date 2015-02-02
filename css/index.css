@@ -93,11 +93,12 @@ body, html {
     border-left: 1px solid #ccc;
 }
 #message{
-    float: left;
     padding: 15px 20px;
     width: 418px;
     background: #222;
     color: white;
+    position: absolute;
+    
 }
 #messages{
     background: #222;
@@ -107,13 +108,11 @@ body, html {
     position: absolute;
     width: 600px;
     height: 480px;
-    clear: both;
-
-    
-
+    margin-top: 100px;
 }
 #sendButton{
-    margin-left: 470px;
+    position: absolute;
+    right: 50px;
     width: 120px;
 }
 
