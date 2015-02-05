@@ -42,7 +42,7 @@ var app = {
         	$('#sensor').css('opacity', message[2]/670);
         	$('#sensor_2').css('opacity', message[1]);
 
-        	dash.sensorTacho(message[2]/10);
+        	dash.sensorTacho(message[2]);
         });
        
         // get a list of peers
