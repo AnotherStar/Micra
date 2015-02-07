@@ -157,16 +157,28 @@ body, html {
     position: absolute;
     top: 30px;
     width: 170px;
+    border
 }
 #temp_text {
+    border: 4px solid transparent;
+    box-shadow: 0 0 0px transparent;
     color: white;
     font-size: 80px;
-    left: 961px;
+    height: 123px;
+    left: 957px;
     opacity: 0.5;
+    padding-top: 22px;
     position: absolute;
     text-align: center;
-    top: 65px;
+    top: 39px;
     width: 150px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+.overheat {
+    border: 4px solid red;
+    box-shadow: 0 0 50px red;
+    opacity: 0.75;
 }
 #speed {
     color: white;

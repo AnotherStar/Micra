@@ -125,7 +125,7 @@
 			//Мгновеная температура каждые 10 сек
 			dash.sensorTemp(temp);
 			//dash.setSpeed(Math.round(temp));
-		}, 1000);
+		}, 5000);
 
 		//onMessage
 		//setInterval(function(){
@@ -191,9 +191,9 @@ function generatorSpeed(){
 function showPart(number){
 	$('.part').each(function(el, index){
 		if(parseInt($(this).attr('id')) !== number){
-			$(this).animate({height: 0, opacity: 0}, 500);
+			$(this).animate({height: 0, opacity: 0}, 1000);
 		} else {
-			$(this).animate({height: 720, opacity: 1}, 500);
+			$(this).animate({height: 720, opacity: 1}, 1000);
 		}
 	});
 }

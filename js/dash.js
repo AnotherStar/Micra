@@ -122,7 +122,12 @@ var Dashboard = {
 			this.temp[i] = this.temp[i + 1];
 		};
 		this.temp[this.temp.length - 1] = temp;
-		$('#temp_text').text(temp);
+		$('#temp_text').text(Math.round(temp));
+		if(temp > 100){
+			$('#temp_text').addClass('overheat');
+		} else {
+			removeClass('overheat')
+		}
 		//renderTemp(this.temp);
 		//console.log(this.temp);
 
