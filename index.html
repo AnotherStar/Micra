@@ -106,20 +106,23 @@
 	$('.part#1').css('height', 720);
 
 	//Прогресс-бар и анимация заставки.
+showPart(3);
+	/*
 	showPart(1);
 	$('#progress').animate({width: 280}, 2000, function(){
 		showPart(2);
 	});
 	
 		app.initialize();
-		
+		*/
 
 		$.plugin('Dashboard', Dashboard);
 		$('#dash_container').Dashboard();
 		dash = $('#dash_container').data('Dashboard');
-
+		dash.sensorSpeed(35);
 	});
 
+/*
 function Appromixation(array){
 	var min = array[0];
 	var max = array[0];
@@ -132,30 +135,7 @@ function Appromixation(array){
 	array_summ = array_summ - min - max;
 	return array_summ/(array.length - 2);
 }
-
-function generatorTacho(){
-	tacho_impulse_delay = Date.now() - tacho_impulse_old;
-	tacho_impulse_old = Date.now();
-	for (var i=0; i<tacho_sensor_length; i++){
-		tacho_delay_array[i] = tacho_delay_array[i + 1];
-	}
-	tacho_delay_array[tacho_sensor_length - 1] = tacho_impulse_delay;
-	setTimeout(function(){
-		generatorTacho();
-	}, 50);
-}
-
-function generatorSpeed(){
-	speed_impulse_delay = Date.now() - speed_impulse_old;
-	speed_impulse_old = Date.now();
-	for (var i=0; i<speed_sensor_length; i++){
-		speed_delay_array[i] = speed_delay_array[i + 1];
-	}
-	speed_delay_array[speed_sensor_length - 1] = speed_impulse_delay;
-	setTimeout(function(){
-		generatorSpeed();
-	}, 50);
-}
+*/
 
 function showPart(number){
 	$('.part').each(function(el, index){

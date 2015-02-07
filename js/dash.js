@@ -17,6 +17,7 @@ var Dashboard = {
 	},
 
 	options: {
+		radius: 30,
 	},
 
 	_build: function(){
@@ -88,10 +89,17 @@ var Dashboard = {
 		temp_plot.smooth();
 	},
 
+	sensorSpeed: function(ms){
+		//rpm = Math.round(60000000 / ms);
+		//console.log(rpm);
+		//if (rpm < 100) { rpm = 0; }
+		speed =  72 * 3.14 * dash.options.radius / ms;
+		this.setSpeed(Math.round(speed));
+	},
 	//Обновление показаний скорости
 	setSpeed: function(speed){
 		if(!!speed){
-			this.$elem.find('#speed').text(parseInt(speed));
+			this.$elem.find('#speed').text(speed);
 		} else {
 			this.$elem.find('#speed').text('---');
 		}
