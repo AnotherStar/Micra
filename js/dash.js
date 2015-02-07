@@ -37,11 +37,12 @@ var Dashboard = {
 			strokeCap: 'round',
 		});
 		for(var i = 0; i <= 30; i++){
-			temp_plot.add(new Point(951 + i*15 + 10, 30 + 150 + 10));}
+			temp_plot.add(new Point(951 + i*5 + 10, 30 + 150 + 10));}
 		this.temp = new Array;
 		for (var i = 0; i <= 30; i++){
 			this.temp[i] = 70;
 		}
+		dash.renderTemp();
 
 		//paper.setup('tacho');
 
