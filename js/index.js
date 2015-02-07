@@ -36,15 +36,15 @@ var app = {
 	        	message[i] = parseFloat(message[i]);
         	}
 
-        	$('#input_1').text(message[0]);
-        	$('#input_2').text(message[1]);
-        	$('#input_3').text(message[2]);
+        	$('#input_1').text(message[1]);
+        	$('#input_2').text(message[2]);
+        	$('#input_3').text(message[3]);
         	$('#sensor').css('opacity', message[2]/670);
         	$('#sensor_2').css('opacity', message[1]);
 
         	dash.sensorTacho(message[2]);
 
-            dash.sensorTemp(message[3]);
+            dash.sensorTemp(parseInt(message[3]));
         });
        
         // get a list of peers
