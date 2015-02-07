@@ -38,7 +38,7 @@ var app = {
 
         	$('#input_1').text(message[1]);
         	$('#input_2').text(message[2]);
-        	$('#input_3').text(message[3]);
+        	
         	$('#sensor').css('opacity', message[2]/670);
         	$('#sensor_2').css('opacity', message[1]);
 
