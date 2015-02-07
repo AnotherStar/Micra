@@ -76,10 +76,6 @@ var Dashboard = {
 		this.$elem.find('#timestamp').text(this.time.now - this.time.start);
 	},
 
-	// Данные температурного дачтика
-	setTemp: function(){
-
-	}
 	//Обновление графика температур
 	renderTemp: function(){
 		var points = dash.temp;
@@ -88,7 +84,7 @@ var Dashboard = {
 			if (points[i] < 70){points[i] = 70}
 			temp_plot.segments[i].point.y = 30 + 150 + 10 - (points[i] - 70) / 50 * 150;
 		}
-		temp_plot.smooth()
+		temp_plot.smooth();
 	},
 
 	//Обновление показаний скорости
@@ -122,7 +118,6 @@ var Dashboard = {
 	//Получение данных с датчика температур (градусы Цельсия)
 	sensorTemp: function(temperature){
 		// Смещаем массив температур на 1 влево, добавляя в конец новое значение
-		alert(temperature);
 		$('#input_3').text(temperature);
 		$('#temp_text').text(temperature);
 
