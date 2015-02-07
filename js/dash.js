@@ -36,10 +36,10 @@ var Dashboard = {
 			strokeWidth: 5,
 			strokeCap: 'round',
 		});
-		for(var i = 0; i <= 30; i++){
-			temp_plot.add(new Point(951 + i*5 + 10, 30 + 150 + 10));}
+		for(var i = 0; i <= 5; i++){
+			temp_plot.add(new Point(951 + i*30 + 10, 30 + 150 + 10));}
 		this.temp = new Array;
-		for (var i = 0; i <= 30; i++){
+		for (var i = 0; i <= 5; i++){
 			this.temp[i] = 0;
 		}
 
