@@ -105,14 +105,10 @@
 
 	$(document).ready(function() {
 
-		app.initialize();
-
 		$('.part').each(function(el, index){
 			$(this).css('height', 0);
 		});
 		$('.part#1').css('height', 720);
-
-		
 
 		//Прогресс-бар и анимация заставки.
 		showPart(1);
@@ -120,7 +116,7 @@
 			showPart(2);
 		});
 	
-		
+		app.initialize();
 
 		$.plugin('Dashboard', Dashboard);
 		$('#dash_container').Dashboard();
