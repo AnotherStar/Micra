@@ -18,6 +18,7 @@ var Dashboard = {
 
 	options: {
 		radius: 30,
+		speed_refresh_time = 1000;
 	},
 
 	_build: function(){
@@ -93,8 +94,12 @@ var Dashboard = {
 		//rpm = Math.round(60000000 / ms);
 		//console.log(rpm);
 		//if (rpm < 100) { rpm = 0; }
-		speed =  72 * 3.14 * dash.options.radius / ms;
-		this.setSpeed(Math.round(speed));
+
+		if (Date.now() >= speed_last_time + speed_refresh_time){
+			speed =  72 * 3.14 * dash.options.radius / ms;
+			this.setSpeed(Math.round(speed));
+			speed_last_time = Date.now();
+		}
 	},
 	//Обновление показаний скорости
 	setSpeed: function(speed){
