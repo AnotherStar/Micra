@@ -118,7 +118,7 @@ var Dashboard = {
 	//Получение данных с датчика температур (градусы Цельсия)
 	sensorTemp: function(temperature){
 
-		if (Date.now() >= last_time + 1000){
+		if (Date.now() >= last_time + 10000){
 
 
 			// Смещаем массив температур на 1 влево, добавляя в конец новое значение
