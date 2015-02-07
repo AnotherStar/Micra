@@ -20,6 +20,10 @@ var app = {
             messages.scrollTop = messages.scrollHeight;
         };
 
+        $('.command_button').on('click', function(){
+            app.sendCommand($(this).attr('command'));
+        })
+
         connectButton.ontouchstart = app.connect;
         listButton.ontouchstart = app.list;
         sendButton.ontouchstart = app.sendData;
@@ -68,6 +72,9 @@ var app = {
         }
         app.setStatus("Disconnecting...");
         bluetoothSerial.disconnect(app.ondisconnect);
+    },
+    sendCommand: function(command) {
+        bluetoothSerial.write(command + "\n");
     },
     sendData: function(event) {
         event.preventDefault();
