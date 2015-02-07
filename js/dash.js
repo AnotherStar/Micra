@@ -95,7 +95,7 @@ var Dashboard = {
 		//console.log(rpm);
 		//if (rpm < 100) { rpm = 0; }
 
-		if (Date.now() >= speed_last_time + speed_refresh_time){
+		if (Date.now() >= speed_last_time + dash.options.speed_refresh_time){
 			speed =  72 * 3.14 * dash.options.radius / ms;
 			this.setSpeed(Math.round(speed));
 			speed_last_time = Date.now();
