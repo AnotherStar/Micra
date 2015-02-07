@@ -20,6 +20,11 @@ var app = {
             messages.scrollTop = messages.scrollHeight;
         };
 
+        $('.command_button').on('click', function(){
+            //alert($(this).attr('command'));
+            app.sendCommand($(this).attr('command'));
+        })
+
         connectButton.ontouchstart = app.connect;
         listButton.ontouchstart = app.list;
         sendButton.ontouchstart = app.sendData;
