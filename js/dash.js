@@ -42,7 +42,7 @@ var Dashboard = {
 		for (var i = 0; i <= 30; i++){
 			this.temp[i] = 70;
 		}
-		this.renderTemp();
+		//this.renderTemp();
 
 		//paper.setup('tacho');
 
