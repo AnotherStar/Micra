@@ -13,5 +13,6 @@
 	<gap:plugin name="org.apache.cordova.dialogs" />
 	<gap:plugin name="org.apache.cordova.vibration" />
 	<gap:plugin name="org.apache.cordova.device-motion" />
+	<gap:plugin name="nl.x-services.plugins.insomnia"/>
 
 </widget>
