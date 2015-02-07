@@ -122,11 +122,16 @@ var Dashboard = {
 	//Получение данных с датчика температур (градусы Цельсия)
 	sensorTemp: function(temp){
 		// Смещаем массив температур на 1 влево, добавляя в конец новое значение
+		$('#input_3').text(temp);
+		$('#temp_text').text(temp);
+
 		for (var i = 0; i < this.temp.length - 1; i++) {
 			this.temp[i] = this.temp[i + 1];
 		};
 		this.temp[this.temp.length - 1] = temp;
-		$('#temp_text').text(Math.round(temp));
+		
+
+		
 		if(temp > 100){
 			$('#temp_text').addClass('overheat');
 		} else {
