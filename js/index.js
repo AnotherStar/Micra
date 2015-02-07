@@ -69,9 +69,6 @@ var app = {
         app.setStatus("Disconnecting...");
         bluetoothSerial.disconnect(app.ondisconnect);
     },
-    sendCommand: function(command) {
-        bluetoothSerial.write(command + "\n");
-    },
     sendData: function(event) {
         event.preventDefault();
         var text = message.value + "\n";
