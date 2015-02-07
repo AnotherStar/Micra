@@ -101,6 +101,7 @@ var Dashboard = {
 	sensorTacho: function(ms){
 		rpm = Math.round(60000000 / ms);
 		//console.log(rpm);
+		if (rpm < 100) { rpm = 0; }
 		this.setTacho(rpm);
 	},
 
