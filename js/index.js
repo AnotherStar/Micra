@@ -44,7 +44,7 @@ var app = {
 
         	dash.sensorTacho(message[2]);
 
-            dash.sensorTemp(parseInt(message[3]));
+            dash.sensorTemp(message[3]);
         });
        
         // get a list of peers
