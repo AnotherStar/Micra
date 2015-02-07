@@ -18,7 +18,7 @@ var Dashboard = {
 
 	options: {
 		radius: 30,
-		speed_refresh_time = 1000,
+		speed_refresh_time: 1000,
 	},
 
 	_build: function(){
