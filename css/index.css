@@ -215,3 +215,13 @@ body, html {
 	position: relative;
 	color: white;
 }
+.command_button{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    background: rgba(255,255,255,.25);
+    float: left;
+}
+.command_button:hover{
+    background: rgba(255,255,255,.75);
+};

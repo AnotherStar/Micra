@@ -50,13 +50,17 @@
 	<div id="3" class="part">
 		<div id="dash_container">
 
+			<canvas id="dash" width="1184" height="720"></canvas>
 			<div style="position: absolute">
-				<div id="sensor"></div>
+				<div command="command_1" class="command_button"></div>
+				<div command="command_2" class="command_button"></div>
+				<div command="command_3" class="command_button"></div>
+				<!--<div id="sensor"></div>
 				<div id="sensor_2"></div>
-				<div id="sensor_3"></div>
+				<div id="sensor_3"></div>-->
 			</div>
 
-			<canvas id="dash" width="1184" height="720"></canvas>
+			
 			<div onclick="showPart(2)" id="speed">---</div>
 			<div id="rpm">---</div>
 			<div id="temp_text">000</div>
@@ -105,6 +109,11 @@
 		$(this).css('height', 0);
 	});
 	$('.part#1').css('height', 720);
+
+	$('.command_button').on('click', function(){
+		//alert($(this).attr('command'));
+		app.sendCommand($(this).attr('command'));
+	})
 
 	//Прогресс-бар и анимация заставки.
 //showPart(3);
