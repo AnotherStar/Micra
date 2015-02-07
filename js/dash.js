@@ -36,11 +36,11 @@ var Dashboard = {
 			strokeWidth: 5,
 			strokeCap: 'round',
 		});
-		for(var i = 0; i <= 10; i++){
+		for(var i = 0; i <= 30; i++){
 			temp_plot.add(new Point(951 + i*15 + 10, 30 + 150 + 10));}
 		this.temp = new Array;
-		for (var i = 0; i <= 10; i++){
-			this.temp[i] = 0;
+		for (var i = 0; i <= 30; i++){
+			this.temp[i] = 70;
 		}
 
 		//paper.setup('tacho');
@@ -118,7 +118,7 @@ var Dashboard = {
 	//Получение данных с датчика температур (градусы Цельсия)
 	sensorTemp: function(temperature){
 
-		if (Date.now() >= last_time + 10000){
+		if (Date.now() >= last_time + 5000){
 
 
 			// Смещаем массив температур на 1 влево, добавляя в конец новое значение
@@ -132,7 +132,7 @@ var Dashboard = {
 			
 
 			
-			if(temperature > 100){
+			if(temperature >= 100){
 				$('#temp_text').addClass('overheat');
 			} else {
 				$('#temp_text').removeClass('overheat')
