@@ -103,46 +103,20 @@
 	});
 	$('.part#1').css('height', 720);
 
+	//Прогресс-бар и анимация заставки.
 	showPart(1);
 	$('#progress').animate({width: 280}, 2000, function(){
 		showPart(2);
 	});
-	//Прогресс-бар и анимация заставки.
 	
-	//$('#splash').delay(2000).animate({marginTop: -720}, 500);
-
 		app.initialize();
-
-
 		
 
 		$.plugin('Dashboard', Dashboard);
 		$('#dash_container').Dashboard();
 		dash = $('#dash_container').data('Dashboard');
 
-		//onMessage
-		//setInterval(function(){
-		//	loop_1();
-		//}, 25);
-
-		//setInterval(function(){
-		//	loop_2();
-		//}, 500);
-
-		//generatorTacho();
-		//generatorSpeed();
-
 	});
-
-//function loop_1(){
-//	a = Appromixation(tacho_delay_array);
-//	dash.sensorTacho(a);
-//}
-
-//function loop_2(){
-//	b = Appromixation(speed_delay_array);
-//	dash.setSpeed(b);
-//}
 
 function Appromixation(array){
 	var min = array[0];
