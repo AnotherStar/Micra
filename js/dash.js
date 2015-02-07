@@ -36,10 +36,10 @@ var Dashboard = {
 			strokeWidth: 5,
 			strokeCap: 'round',
 		});
-		for(var i = 0; i <= 5; i++){
-			temp_plot.add(new Point(951 + i*30 + 10, 30 + 150 + 10));}
+		for(var i = 0; i <= 10; i++){
+			temp_plot.add(new Point(951 + i*15 + 10, 30 + 150 + 10));}
 		this.temp = new Array;
-		for (var i = 0; i <= 5; i++){
+		for (var i = 0; i <= 10; i++){
 			this.temp[i] = 0;
 		}
 
@@ -107,7 +107,7 @@ var Dashboard = {
 		if (isNaN(rpm)){
 			rpm = 0;
 		}
-		var angle = rpm / 10000 * 180;
+		var angle = rpm / 12000 * 180;
 		delta = this.tacho.angle + angle;
 		tacho.rotate(delta, new Point(x0, y0));
 		this.tacho.angle = this.tacho.angle - delta;
@@ -132,7 +132,7 @@ var Dashboard = {
 			
 
 			
-			if(temp > 100){
+			if(temperature > 100){
 				$('#temp_text').addClass('overheat');
 			} else {
 				$('#temp_text').removeClass('overheat')
