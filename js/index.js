@@ -177,8 +177,8 @@ var app = {
     }
 };
 
-function sendCommand(command){
-	alert('command: ' + command);
-	bluetoothSerial.write(command, success);
-	alert(typeof bluetoothSerial.write(command, success));
-}
+//function sendCommand(command){
+	//alert('command: ' + command);
+	//bluetoothSerial.write(command, success);
+	//alert(typeof bluetoothSerial.write(command, success));
+//}
