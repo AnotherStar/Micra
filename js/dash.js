@@ -76,6 +76,10 @@ var Dashboard = {
 		this.$elem.find('#timestamp').text(this.time.now - this.time.start);
 	},
 
+	// Данные температурного дачтика
+	setTemp: function(){
+
+	}
 	//Обновление графика температур
 	renderTemp: function(){
 		var points = dash.temp;
@@ -126,7 +130,7 @@ var Dashboard = {
 		if(temp > 100){
 			$('#temp_text').addClass('overheat');
 		} else {
-			removeClass('overheat')
+			$('#temp_text').removeClass('overheat')
 		}
 		//renderTemp(this.temp);
 		//console.log(this.temp);

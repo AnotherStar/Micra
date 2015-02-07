@@ -43,6 +43,8 @@ var app = {
         	$('#sensor_2').css('opacity', message[1]);
 
         	dash.sensorTacho(message[2]);
+
+            dash.sensorTemp(message[3]);
         });
        
         // get a list of peers

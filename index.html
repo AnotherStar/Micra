@@ -120,13 +120,6 @@
 		$('#dash_container').Dashboard();
 		dash = $('#dash_container').data('Dashboard');
 
-		setInterval(function(){
-			var temp = Math.round((90 + Math.random() * 20)*10)/10;
-			//Мгновеная температура каждые 10 сек
-			dash.sensorTemp(temp);
-			//dash.setSpeed(Math.round(temp));
-		}, 5000);
-
 		//onMessage
 		//setInterval(function(){
 		//	loop_1();
