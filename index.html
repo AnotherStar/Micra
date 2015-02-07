@@ -105,47 +105,31 @@
 
 	$(document).ready(function() {
 
-	$('.part').each(function(el, index){
-		$(this).css('height', 0);
-	});
-	$('.part#1').css('height', 720);
-
-	$('.command_button').on('click', function(){
-		//alert($(this).attr('command'));
-		app.sendCommand($(this).attr('command'));
-	})
-
-	//Прогресс-бар и анимация заставки.
-//showPart(3);
-	
-	showPart(1);
-	$('#progress').animate({width: 280}, 2000, function(){
-		showPart(2);
-	});
-	
 		app.initialize();
+
+		$('.part').each(function(el, index){
+			$(this).css('height', 0);
+		});
+		$('.part#1').css('height', 720);
+
+		$('.command_button').on('click', function(){
+			//alert($(this).attr('command'));
+			app.sendCommand($(this).attr('command'));
+		})
+
+		//Прогресс-бар и анимация заставки.
+		showPart(1);
+		$('#progress').animate({width: 280}, 2000, function(){
+			showPart(2);
+		});
+	
 		
 
 		$.plugin('Dashboard', Dashboard);
 		$('#dash_container').Dashboard();
 		dash = $('#dash_container').data('Dashboard');
-		//dash.sensorSpeed(35);
+		
 	});
-
-/*
-function Appromixation(array){
-	var min = array[0];
-	var max = array[0];
-	var array_summ = 0;
-	for (var i=0; i<array.length; i++){
-		if (max < array[i]){max = array[i]}
-		if (min > array[i]){min = array[i]}
-		array_summ = array_summ + array[i];
-	}
-	array_summ = array_summ - min - max;
-	return array_summ/(array.length - 2);
-}
-*/
 
 function showPart(number){
 	$('.part').each(function(el, index){
