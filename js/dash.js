@@ -122,6 +122,7 @@ var Dashboard = {
 			this.temp[i] = this.temp[i + 1];
 		};
 		this.temp[this.temp.length - 1] = temp;
+		$('#temp_text').text(temp);
 		//renderTemp(this.temp);
 		//console.log(this.temp);
 

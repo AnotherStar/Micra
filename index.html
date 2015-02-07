@@ -59,11 +59,12 @@
 			<canvas id="dash" width="1184" height="720"></canvas>
 			<div onclick="showPart(2)" id="speed">---</div>
 			<div id="rpm">---</div>
+			<div id="temp_text">000</div>
 			<canvas id="temp"></canvas>
-			<div id="timestamp">---</div>
-			<div id="input_1">1---</div>
-			<div id="input_2">2---</div>
-			<div id="input_3">3---</div>
+			<div id="timestamp">000</div>
+			<div id="input_1">000</div>
+			<div id="input_2">000</div>
+			<div id="input_3">000</div>
 
 		</div>
 	</div>
@@ -190,9 +191,9 @@ function generatorSpeed(){
 function showPart(number){
 	$('.part').each(function(el, index){
 		if(parseInt($(this).attr('id')) !== number){
-			$(this).animate({height: 0}, 1000);
+			$(this).animate({height: 0, opacity: 0}, 500);
 		} else {
-			$(this).animate({height: 720}, 1000);
+			$(this).animate({height: 720, opacity: 1}, 500);
 		}
 	});
 }

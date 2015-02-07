@@ -2,6 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     width: 1196px;
+    background: black;
 }
 
 @font-face {
@@ -156,6 +157,16 @@ body, html {
     position: absolute;
     top: 30px;
     width: 170px;
+}
+#temp_text {
+    color: white;
+    font-size: 80px;
+    left: 961px;
+    opacity: 0.5;
+    position: absolute;
+    text-align: center;
+    top: 65px;
+    width: 150px;
 }
 #speed {
     color: white;
