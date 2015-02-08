@@ -74,7 +74,7 @@ var app = {
         bluetoothSerial.disconnect(app.ondisconnect);
     },
     sendCommand: function(command) {
-        bluetoothSerial.write(command);
+        bluetoothSerial.write(command + "\n");
     },
     sendData: function(event) {
         event.preventDefault();
@@ -84,6 +84,7 @@ var app = {
             messages.value += ("Us: " + text);
             messages.scrollTop = messages.scrollHeight;
         };
+
         bluetoothSerial.write(text, success);
         return false;
     },
