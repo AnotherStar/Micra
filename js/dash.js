@@ -68,7 +68,7 @@ var Dashboard = {
 
 		view.onFrame = function(event) {
 			dash.refreshTime();
-			$('#input_4').text = this.state;
+			$('#input_4').text(this.state);
 			//dash.setTacho();
 		}
 
@@ -119,7 +119,8 @@ var Dashboard = {
 	sensorTacho: function(ms){
 		rpm = Math.round(60000000 / ms);
 		//console.log(rpm);
-		if (rpm < 100) { rpm = 0; this.state = false; } else {
+		if (rpm < 100 || rpm > 15000) { rpm = 0; this.state = false; 
+		} else {
 			this.state = true;
 		}
 		this.setTacho(rpm);

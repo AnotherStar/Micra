@@ -91,6 +91,7 @@
 			<div id="temp_text">000</div>
 			<canvas id="temp"></canvas>
 			<div id="timestamp">000</div>
+			<div id="input_0">000</div>
 			<div id="input_1">000</div>
 			<div id="input_2">000</div>
 			<div id="input_3">000</div>
@@ -128,6 +129,8 @@
 	var speed_last_time = 0;
 
 	$(document).ready(function() {
+		app.initialize();
+		var insomnia = cordova.require('insomnia');
 
 	$('.part').each(function(el, index){
 		$(this).css('height', 0);
@@ -145,8 +148,8 @@
 	$('#progress').animate({width: 280}, 2000, function(){
 		showPart(2);
 	});
-	
-		app.initialize();
+		
+		
 		
 
 		$.plugin('Dashboard', Dashboard);
@@ -172,9 +175,9 @@ function Appromixation(array){
 
 function showPart(number){
 	if (number == 3){
-		//window.plugins.insomnia.keepAwake();
+		insomnia.keepAwake();
 	} else {
-		//window.plugins.insomnia.allowSleepAgain();
+		insomnia.allowSleepAgain();
 	}
 	
 	$('.part').each(function(el, index){

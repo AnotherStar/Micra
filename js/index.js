@@ -5,6 +5,8 @@
 
 var bluetoothSerial = cordova.require('bluetoothSerial');
 
+
+
 var app = {
     initialize: function() {
         this.bind();
@@ -39,7 +41,7 @@ var app = {
         	for(var i = 0; i < message.length; i++){
 	        	message[i] = parseFloat(message[i]);
         	}
-
+            $('#input_0').text(message[0]);
         	$('#input_1').text(message[1]);
         	$('#input_2').text(message[2]);
         	

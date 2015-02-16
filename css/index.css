@@ -215,7 +215,7 @@ p{
     top: 20px;
     width: 300px;
 }
-#timestamp,#input_1,#input_2,#input_3,#input_4{
+#timestamp,#input_0,#input_1,#input_2,#input_3,#input_4{
 	position: relative;
 	color: white;
 }
