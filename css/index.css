@@ -12,7 +12,10 @@ body, html {
 
 *{
     font-size: 40px;
-    font-family: "Roboto";
+   /* font-family: "Roboto";*/
+}
+p{
+    margin-top: 0;
 }
 
 @keyframes blink {  
@@ -34,6 +37,7 @@ body, html {
     height: 0px;
     overflow: hidden;
     position: relative;
+    color: white;
 }
 
 #splash{
@@ -76,7 +80,7 @@ body, html {
     margin-bottom: 30px;
 
 }
-#connectButton,#listButton,#disconnectButton,#sendButton,#view{
+#connectButton,#listButton,#disconnectButton,#sendButton,#view,#options,#back{
     background: linear-gradient(to bottom, #666, #000, #222);
     padding: 15px 25px;
     border: 2px solid #ccc;
@@ -211,7 +215,7 @@ body, html {
     top: 20px;
     width: 300px;
 }
-#timestamp,#input_1,#input_2,#input_3{
+#timestamp,#input_1,#input_2,#input_3,#input_4{
 	position: relative;
 	color: white;
 }

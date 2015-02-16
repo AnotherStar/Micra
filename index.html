@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="ru">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no, target-densitydpi=device-dpi"/>
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>ArduinoMotoDash</title>
 </head>
 	<body>
+
+	<!-- Заставка -->
+	<div id="0" class="part">
+		<div class="options" style="padding: 50px">
+			<p>Bluetooth-модуль:</p>
+			<a style="display: inline-block" id="listButton">Device list</a>
+			<select id="deviceList">
+				<option>Discovering</option>
+			</select>
+
+			<table>
+				<tbody>
+					<tr>
+						<td>Интервал данных:</td>
+						<td><input type="text" value="25"></td>
+					</tr>
+					
+				</tbody>
+			</table>
+			<a onclick="showPart(2)" id="back">Back</a>
+			
+			
+		</div>
+	</div>
 
 	<!-- Заставка -->
 	<div id="1" class="part">
@@ -23,17 +48,16 @@
 			<div id="content">
 				<div id="connection_btns">
 
-					<select id="deviceList">
-						<option>Discovering</option>
-					</select>
+					
 
 					<a id="connectButton">Connect</a>
 
-					<a id="listButton">Device list</a>
+					
 
 					<div id="statusMessage">Status</div>
 
 					<a id="disconnectButton">Disconnect</a>
+					<a onclick="showPart(0)" id="options">Options</a>
 					<a onclick="showPart(3)" id="view">View</a>
 				</div>
 				<div id="chat">
@@ -69,6 +93,7 @@
 			<div id="input_1">000</div>
 			<div id="input_2">000</div>
 			<div id="input_3">000</div>
+			<div id="input_4">000</div>
 
 		</div>
 	</div>

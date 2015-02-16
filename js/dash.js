@@ -29,6 +29,8 @@ var Dashboard = {
 		this.tacho = new Object;
 		this.tacho.angle = 0;
 
+		this.active = false;
+
 		//Нулевой массив температур
 		paper.install(window);
 		
@@ -66,7 +68,7 @@ var Dashboard = {
 
 		view.onFrame = function(event) {
 			dash.refreshTime();
-			
+			$('#input_4').text = this.state;
 			//dash.setTacho();
 		}
 
@@ -97,6 +99,9 @@ var Dashboard = {
 
 		if (Date.now() >= speed_last_time + dash.options.speed_refresh_time){
 			speed =  72 * 3.14 * dash.options.radius / ms;
+			if (speed < 3 || speed > 200){
+				speed = 0;
+			}
 			this.setSpeed(Math.round(speed));
 			speed_last_time = Date.now();
 		}
@@ -114,7 +119,9 @@ var Dashboard = {
 	sensorTacho: function(ms){
 		rpm = Math.round(60000000 / ms);
 		//console.log(rpm);
-		if (rpm < 100) { rpm = 0; }
+		if (rpm < 100) { rpm = 0; this.state = false; } else {
+			this.state = true;
+		}
 		this.setTacho(rpm);
 	},
 
