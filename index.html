@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no, target-densitydpi=device-dpi"/>
 <link rel="stylesheet" type="text/css" href="css/index.css" />
+
 <title>ArduinoMotoDash</title>
 </head>
 	<body>
@@ -104,9 +105,7 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/paper.js"></script>
 		<script type="text/javascript" src="js/dash.js"></script>
-		<script type="text/javascript">
 		
-		</script>
 	</body>
 </html>
 
@@ -172,6 +171,12 @@ function Appromixation(array){
 */
 
 function showPart(number){
+	if (number == 3){
+		window.plugins.insomnia.keepAwake();
+	} else {
+		window.plugins.insomnia.allowSleepAgain();
+	}
+	
 	$('.part').each(function(el, index){
 		if(parseInt($(this).attr('id')) !== number){
 			$(this).animate({height: 0, opacity: 0}, 1000);
