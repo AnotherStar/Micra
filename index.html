@@ -130,7 +130,7 @@
 
 	$(document).ready(function() {
 		app.initialize();
-		var insomnia = cordova.require('insomnia');
+		//var insomnia = cordova.require('insomnia');
 
 	$('.part').each(function(el, index){
 		$(this).css('height', 0);
@@ -175,9 +175,9 @@ function Appromixation(array){
 
 function showPart(number){
 	if (number == 3){
-		insomnia.keepAwake();
+		//insomnia.keepAwake();
 	} else {
-		insomnia.allowSleepAgain();
+		//insomnia.allowSleepAgain();
 	}
 	
 	$('.part').each(function(el, index){
